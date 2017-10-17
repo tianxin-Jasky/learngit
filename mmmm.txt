@@ -1,0 +1,54 @@
+package com.shishi;
+public class important {
+	public static void main(String[] args) {
+		StringFactory s=new StringFactory();
+		s.compareLargerThan();
+		s.find();
+	}
+}
+
+
+package com.shishi;
+import java.util.Scanner;
+public class StringFactory {
+	String s;
+	Scanner sd=new Scanner(System.in);
+	public char[] compareLargerThan;
+	public void compareLargerThan(){
+		String s1="fagagv";
+		Scanner sd=new Scanner(System.in);
+			String  s=sd.nextLine(); //输入变量s的字符串
+			int m=s.compareTo(s1);
+        boolean b = s.compareTo(s1) > 0?true:false;//根据表来进行比较
+        	System.out.println(b);
+	}
+	public void find(){
+			System.out.println("输入一个字符串");
+			String m=sd.nextLine();
+			System.out.println("输入变量s的值");
+			String s=sd.nextLine();
+			int q=-1;
+			if(m.length() > s.length()){//判断m的字符串是否小于s
+			System.out.println(q);
+			}else{
+				for(int i=0;i<s.length();i++){
+					if(m.charAt(0) == s.charAt(i)){//找到m第一个字母与s的第几个字母对应
+						int c=i;
+						for(int j=0;j< m.length() ;j++,c++){
+							if(m.charAt(j) != s.charAt(c)){//往后比较
+								System.out.println(q);
+								break; //其中若有不满足的直接输入-1
+							}
+							if(m.charAt(m.length()-1) == s.charAt(c)){//m的最后一个字母是否任满足条件
+								System.out.println(0);
+								break;
+							}
+						}
+					}else{
+						System.out.println(q);
+						break;
+					}
+				}
+			}
+	}
+}
